@@ -46,25 +46,32 @@ document.getElementById('submitBtn').addEventListener("click", function divideBy
 //    It should accept two parameters within input fields, which will both be first names.
 //    The function should display to the HTML page a greeting to both people.
 
-document.getElementById('submitBtn2').addEventListener("click", function greeting2(name1, name2) {
-  var name1 = document.getElementById('name1').value;
-  var name2 = document.getElementById('name2').value;
-  document.getElementById('q3a').innerHTML += "<p> Hello " + name1 + "</p>";
-  document.getElementById('q3b').innerHTML += "<p> Hello " + name2 + "</p>";
-});
 
 
-
-
-function greeting(firstName,firstNameTwo) {
-document.getElementById('q3').innerHTML += "<p>Hello " + firstName + "</p>";
-document.getElementById('q3').innerHTML += "<p>Hello " + firstNameTwo + "</p>";
+function greeting(firstName, firstNameTwo) {
+    document.getElementById('q3').innerHTML += "<p>Hello " + firstName + "</p>";
+    document.getElementById('q3').innerHTML += "<p>Hello " + firstNameTwo + "</p>";
 };
 
 greeting("jerermy", "erica");
 
 // 4. Create a function that finds the average of 6 numbers passed in when called
 //    and returns the value and is then displayed in the HTML page.
+var averageNum = [2, 6, 8, 10, 12, 14];
+
+function average(array) {
+    var sumNum = 0;
+    for (var i = 0; i < array.length; i++) {
+        sumNum += array[i];
+        console.log(sumNum);
+    }
+    return (sumNum / array.length);
+
+}
+var averageTotal = average(averageNum);
+console.log(averageTotal);
+document.getElementById('q4').innerHTML = "<p>"  + averageTotal + "</p>";
+
 
 
 
@@ -72,6 +79,22 @@ greeting("jerermy", "erica");
 // 5. You use Amazon Subscribe & Save to have six cans of cashews automatically sent to you each month.
 //    Write a function that takes the price per unit and calculates the total for you each month.
 //    Since the price of the cashews can change anytime, pass that amount into the function to get your total price.
+
+
+var unitPriceEachMonth = [1,2,3,4,5,6,7,8,9,10,11,12];
+var totalPriceEachMonth = "0";
+
+function cashews(array) {
+  for (var i = 0; i < array.length; i++) {
+    totalPriceEachMonth = (array[i] * 6);
+    document.getElementById('q5').innerHTML += "<li>The Cost Month " + unitPriceEachMonth[i] + " is $ " + totalPriceEachMonth + "</li>"
+  }
+}
+cashews(unitPriceEachMonth);
+
+
+
+
 
 
 
