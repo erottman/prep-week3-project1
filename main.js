@@ -40,13 +40,28 @@ document.getElementById('submitBtn').addEventListener("click", function divideBy
     document.getElementById('q2').innerHTML = divideByTwo;
 });
 
-console.log(divideByTwo);
+
 
 // 3. Define a function called "greeting".
 //    It should accept two parameters within input fields, which will both be first names.
 //    The function should display to the HTML page a greeting to both people.
 
+document.getElementById('submitBtn2').addEventListener("click", function greeting2(name1, name2) {
+  var name1 = document.getElementById('name1').value;
+  var name2 = document.getElementById('name2').value;
+  document.getElementById('q3a').innerHTML += "<p> Hello " + name1 + "</p>";
+  document.getElementById('q3b').innerHTML += "<p> Hello " + name2 + "</p>";
+});
 
+
+
+
+function greeting(firstName,firstNameTwo) {
+document.getElementById('q3').innerHTML += "<p>Hello " + firstName + "</p>";
+document.getElementById('q3').innerHTML += "<p>Hello " + firstNameTwo + "</p>";
+};
+
+greeting("jerermy", "erica");
 
 // 4. Create a function that finds the average of 6 numbers passed in when called
 //    and returns the value and is then displayed in the HTML page.
