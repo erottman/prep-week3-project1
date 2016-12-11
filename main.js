@@ -17,13 +17,14 @@ ADVANCED TRACK: 11-15
 // 1. Create a function that simply returns a string that says something funny
 //    when it is called and then displayed into the HTML page.
 function funny() {
-  return "Is this funny";
-  document.getElementById('q1').innerHTML += "</p>" + funny() + "</p>;"
+    return "Is this funny";
+
 };
 
 funny();
 
 console.log(funny());
+document.getElementById('q1').innerHTML = "</p>" + funny() + "</p>";
 
 
 
@@ -33,7 +34,13 @@ console.log(funny());
 //    The function should divide the number by two and
 //    then displayed into the HTML page.
 
+document.getElementById('submitBtn').addEventListener("click", function divideByTwo(number) {
+    var number = document.getElementById('number').value;
+    var divideByTwo = number / 2;
+    document.getElementById('q2').innerHTML = divideByTwo;
+});
 
+console.log(divideByTwo);
 
 // 3. Define a function called "greeting".
 //    It should accept two parameters within input fields, which will both be first names.
@@ -83,7 +90,7 @@ console.log(funny());
 
 // 10. Write a function that accepts the following array and separates the people into two teams. Display each team within the HTML page.
 //    No names next to each other in the array should be on the same team.
-     teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
+teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
 
 
 
@@ -111,10 +118,6 @@ console.log(funny());
 
 
 
-
-
-
-
 // ADVANCED TRACK
 
 
@@ -132,7 +135,9 @@ console.log(funny());
 // B. Create a function that determines whether a parameter is a number or not.
 //     Iterate over the elements in the following array to determine if each is a number.
 //     HINT: You may need to use the isNaN method.
-       arrayOfAllTheThings = ["one", 23, {thingsWhalesLove: "beaches"}, "six hundred", 33, 6834, "5,435"]
+arrayOfAllTheThings = ["one", 23, {
+    thingsWhalesLove: "beaches"
+}, "six hundred", 33, 6834, "5,435"]
 
 
 
