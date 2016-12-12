@@ -230,16 +230,14 @@ sumOfThree(arraydigistthree);
 
 function piggyBank(quarters, dimes, nickels, pennies) {
 
-return ((quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01));
+    return ((quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01));
 }
 
-var amount = piggyBank(2,4,6,8);
-console.log(piggyBank(2,4,6,8));
+var amount = piggyBank(2, 4, 6, 8);
+console.log(piggyBank(2, 4, 6, 8));
 var amountDollars = "$" + amount.toFixed(2);
 console.log(amountDollars);
 document.getElementById('q12').innerHTML = amountDollars;
-
-
 
 
 
@@ -255,34 +253,63 @@ document.getElementById('q12').innerHTML = amountDollars;
 //        If the phone number is 11 digits and the first number is not 1, then it is a bad number.
 //        HINT: You may need to use the charAt method.
 
+var phoneNumbers = ["456799", "1234567898", "12345678911", "23456789101"];
 
 
-// B. Create a function that determines whether a parameter is a number or not.
-//     Iterate over the elements in the following array to determine if each is a number.
-//     HINT: You may need to use the isNaN method.
-arrayOfAllTheThings = ["one", 23, {
-    thingsWhalesLove: "beaches"
-}, "six hundred", 33, 6834, "5,435"]
+function phoneNumberCleanUp(array) {
+    for (var i = 0; i < array.length; i++) {
+        if ((array[i].length < 10) && (array[i].length > 11)) {
+            console.log("This is a bad number: " + array[i]);
+
+        } else if (array[i].length === 10) {
+            console.log("This is a good number: " + array[i]);
+
+        } else if ((array[i].length === 11) && (array[i].charAt(0) === 1)) {
+            console.log("This is a good number:" + array[i].charAt(10));
+
+        } else if ((array[i].length === 11) && (array[i].charAt(0) !== 1)) {
+            console.log("This is a bad number");
+
+        } else {
+            console.log("This is a bad number" + array[i]);
+        }
+    }
+  }
+phoneNumberCleanUp(phoneNumbers);
+
+
+console.log(phoneNumbers[0].length);
 
 
 
-// C. Create a die rolling function that accepts no parameters.
-//     It rolls two six-sided-dice, adds the two numbers together, and returns a roll value.
-//     Display the result in the HTML page.
-//     To get the random number rolled by each die, use Math.random and Math.floor.
+
+
+    // B. Create a function that determines whether a parameter is a number or not.
+    //     Iterate over the elements in the following array to determine if each is a number.
+    //     HINT: You may need to use the isNaN method.
+    arrayOfAllTheThings = ["one", 23, {
+        thingsWhalesLove: "beaches"
+    }, "six hundred", 33, 6834, "5,435"]
 
 
 
-// D. Using your die roll function above, figure out how many times it would take a user
-//     to get around a Monopoly board once. A monopoly board has 40 spaces total.
+    // C. Create a die rolling function that accepts no parameters.
+    //     It rolls two six-sided-dice, adds the two numbers together, and returns a roll value.
+    //     Display the result in the HTML page.
+    //     To get the random number rolled by each die, use Math.random and Math.floor.
 
 
 
-// E. Write a function that takes a year from a user
-//    and reports whether or not it is a leap year.
-//    Display the result in the HTML page.
-//    Remember, a leap year occurs:
-//        On every year that is evenly divisible by 4
-//        Except every year that is evenly divisible by 100
-//        Unless the year is also evenly divisible by 400
-//        For example, 1997 is not a leap year, but 1996 is. 1900 is not a leapyear, but 2000 is.
+    // D. Using your die roll function above, figure out how many times it would take a user
+    //     to get around a Monopoly board once. A monopoly board has 40 spaces total.
+
+
+
+    // E. Write a function that takes a year from a user
+    //    and reports whether or not it is a leap year.
+    //    Display the result in the HTML page.
+    //    Remember, a leap year occurs:
+    //        On every year that is evenly divisible by 4
+    //        Except every year that is evenly divisible by 100
+    //        Unless the year is also evenly divisible by 400
+    //        For example, 1997 is not a leap year, but 1996 is. 1900 is not a leapyear, but 2000 is.
