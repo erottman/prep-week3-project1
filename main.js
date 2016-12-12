@@ -135,11 +135,18 @@ document.getElementById('q7').innerHTML = "<li>For " + numberQuarter + " one qua
 
 
 // 8. Write a function called "sleepings", it should accept one parameter, an integer called "hours".
-//    Write a conditional statement inside of the function. If the number of hours is more than 8, display a statement to the HTML page about getting enough rest.
+//    Write a conditional statement inside of the function. If the number of hours is more than 8, display a statement
+// to the HTML page about getting enough rest.
 //    If the number of hours is less than 8, print a statement recommending the user get more shut eye.
 
-
-
+function sleepings(hours) {
+  if (hours > 8) {
+    document.getElementById('q8').innerHTML = "<li> Im a regular sleeping beauty</li>";
+  }else {
+    document.getElementById('q8').innerHTML = "<li> Who's a grumpy bear </li>";
+  }
+}
+sleepings(3);
 
 
 // 9. Develop a function that determines a person's age by asking them for their birth year.
