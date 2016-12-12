@@ -264,52 +264,61 @@ function phoneNumberCleanUp(array) {
         } else if (array[i].length === 10) {
             console.log("This is a good number: " + array[i]);
 
-        } else if ((array[i].length === 11) && (array[i].charAt(0) === 1)) {
-            console.log("This is a good number:" + array[i].charAt(10));
+        } else if ((array[i].length === 11) && (array[i].charAt(0) === "1")) {
+            console.log("This is a good number: " + (array[i].slice(array[i].length, -1)));
 
         } else if ((array[i].length === 11) && (array[i].charAt(0) !== 1)) {
-            console.log("This is a bad number");
+            console.log("This is a bad number also: " + array[i]);
 
         } else {
-            console.log("This is a bad number" + array[i]);
+            console.log("This is a bad number too: " + array[i]);
         }
     }
-  }
+}
 phoneNumberCleanUp(phoneNumbers);
 
 
-console.log(phoneNumbers[0].length);
+console.log(phoneNumbers[2].length);
 
 
 
 
 
-    // B. Create a function that determines whether a parameter is a number or not.
-    //     Iterate over the elements in the following array to determine if each is a number.
-    //     HINT: You may need to use the isNaN method.
-    arrayOfAllTheThings = ["one", 23, {
-        thingsWhalesLove: "beaches"
-    }, "six hundred", 33, 6834, "5,435"]
+// B. Create a function that determines whether a parameter is a number or not.
+//     Iterate over the elements in the following array to determine if each is a number.
+//     HINT: You may need to use the isNaN method.
+
+var parameterNumbers = [8,4,"green", "yellow"];
+
+function parameterNum(array) {
+    for (var i = 0; i < array.length; i++) {
+        if(isNaN(array[i])) {
+          console.log("Not a number: " + array[i]);
+        }else {
+          console.log("Is a number: " + array[i])
+        }
+    }
+}
+parameterNum(parameterNumbers);
+
+
+// C. Create a die rolling function that accepts no parameters.
+//     It rolls two six-sided-dice, adds the two numbers together, and returns a roll value.
+//     Display the result in the HTML page.
+//     To get the random number rolled by each die, use Math.random and Math.floor.
 
 
 
-    // C. Create a die rolling function that accepts no parameters.
-    //     It rolls two six-sided-dice, adds the two numbers together, and returns a roll value.
-    //     Display the result in the HTML page.
-    //     To get the random number rolled by each die, use Math.random and Math.floor.
+// D. Using your die roll function above, figure out how many times it would take a user
+//     to get around a Monopoly board once. A monopoly board has 40 spaces total.
 
 
 
-    // D. Using your die roll function above, figure out how many times it would take a user
-    //     to get around a Monopoly board once. A monopoly board has 40 spaces total.
-
-
-
-    // E. Write a function that takes a year from a user
-    //    and reports whether or not it is a leap year.
-    //    Display the result in the HTML page.
-    //    Remember, a leap year occurs:
-    //        On every year that is evenly divisible by 4
-    //        Except every year that is evenly divisible by 100
-    //        Unless the year is also evenly divisible by 400
-    //        For example, 1997 is not a leap year, but 1996 is. 1900 is not a leapyear, but 2000 is.
+// E. Write a function that takes a year from a user
+//    and reports whether or not it is a leap year.
+//    Display the result in the HTML page.
+//    Remember, a leap year occurs:
+//        On every year that is evenly divisible by 4
+//        Except every year that is evenly divisible by 100
+//        Unless the year is also evenly divisible by 400
+//        For example, 1997 is not a leap year, but 1996 is. 1900 is not a leapyear, but 2000 is.
