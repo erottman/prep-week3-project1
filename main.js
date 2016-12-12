@@ -109,7 +109,7 @@ function areaRectangle(length, width) {
 }
 areaRectangle(4,2);
 console.log(areaRectangle(4,2));
-document.getElementById('q6a').innerHTML = "</li> The Area Rectangle:" + areaRectangle(4,2) + "</li>";
+document.getElementById('q6a').innerHTML = "<li> The Area Rectangle:" + areaRectangle(4,2) + "</li>";
 
 
 
@@ -118,13 +118,20 @@ function perimeterRectangle(length, width) {
 }
 perimeterRectangle(4,2);
 console.log(perimeterRectangle(4,2));
-document.getElementById('q6b').innerHTML = "</li> The Perimeter Rectangle:" + perimeterRectangle(4,2) + "</li>";
+document.getElementById('q6b').innerHTML = "<li> The Perimeter Rectangle:" + perimeterRectangle(4,2) + "</li>";
 
 // 7. Define a function called "quarter". It accepts one parameter called "number".
 //    The function will return a value which is one quarter of the number provided.
 
+var numberQuarter = 12;
 
+function quarter(number) {
+  return number / 4;
+}
 
+quarter(numberQuarter);
+console.log(quarter(numberQuarter));
+document.getElementById('q7').innerHTML = "<li>For " + numberQuarter + " one quarter is " + quarter(numberQuarter) + "</li>";
 
 
 // 8. Write a function called "sleepings", it should accept one parameter, an integer called "hours".
