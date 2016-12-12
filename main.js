@@ -70,7 +70,7 @@ function average(array) {
 }
 var averageTotal = average(averageNum);
 console.log(averageTotal);
-document.getElementById('q4').innerHTML = "<p>"  + averageTotal + "</p>";
+document.getElementById('q4').innerHTML = "<p>" + averageTotal + "</p>";
 
 
 
@@ -81,14 +81,14 @@ document.getElementById('q4').innerHTML = "<p>"  + averageTotal + "</p>";
 //    Since the price of the cashews can change anytime, pass that amount into the function to get your total price.
 
 
-var unitPriceEachMonth = [1,2,3,4,5,6,7,8,9,10,11,12];
+var unitPriceEachMonth = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 var totalPriceEachMonth = "0";
 
 function cashews(array) {
-  for (var i = 0; i < array.length; i++) {
-    totalPriceEachMonth = (array[i] * 6);
-    document.getElementById('q5').innerHTML += "<li>The Cost Month " + unitPriceEachMonth[i] + " is $ " + totalPriceEachMonth + "</li>"
-  }
+    for (var i = 0; i < array.length; i++) {
+        totalPriceEachMonth = (array[i] * 6);
+        document.getElementById('q5').innerHTML += "<li>The Cost Month " + unitPriceEachMonth[i] + " is $ " + totalPriceEachMonth + "</li>"
+    }
 }
 cashews(unitPriceEachMonth);
 
@@ -105,20 +105,20 @@ cashews(unitPriceEachMonth);
 
 
 function areaRectangle(length, width) {
-  return length * width;
+    return length * width;
 }
-areaRectangle(4,2);
-console.log(areaRectangle(4,2));
-document.getElementById('q6a').innerHTML = "<li> The Area Rectangle:" + areaRectangle(4,2) + "</li>";
+areaRectangle(4, 2);
+console.log(areaRectangle(4, 2));
+document.getElementById('q6a').innerHTML = "<li> The Area Rectangle:" + areaRectangle(4, 2) + "</li>";
 
 
 
 function perimeterRectangle(length, width) {
-  return (length * 2) + (width * 2);
+    return (length * 2) + (width * 2);
 }
-perimeterRectangle(4,2);
-console.log(perimeterRectangle(4,2));
-document.getElementById('q6b').innerHTML = "<li> The Perimeter Rectangle:" + perimeterRectangle(4,2) + "</li>";
+perimeterRectangle(4, 2);
+console.log(perimeterRectangle(4, 2));
+document.getElementById('q6b').innerHTML = "<li> The Perimeter Rectangle:" + perimeterRectangle(4, 2) + "</li>";
 
 // 7. Define a function called "quarter". It accepts one parameter called "number".
 //    The function will return a value which is one quarter of the number provided.
@@ -126,7 +126,7 @@ document.getElementById('q6b').innerHTML = "<li> The Perimeter Rectangle:" + per
 var numberQuarter = 12;
 
 function quarter(number) {
-  return number / 4;
+    return number / 4;
 }
 
 quarter(numberQuarter);
@@ -140,11 +140,11 @@ document.getElementById('q7').innerHTML = "<li>For " + numberQuarter + " one qua
 //    If the number of hours is less than 8, print a statement recommending the user get more shut eye.
 
 function sleepings(hours) {
-  if (hours > 8) {
-    document.getElementById('q8').innerHTML = "<li> Im a regular sleeping beauty</li>";
-  }else {
-    document.getElementById('q8').innerHTML = "<li> Who's a grumpy bear </li>";
-  }
+    if (hours > 8) {
+        document.getElementById('q8').innerHTML = "<li> Im a regular sleeping beauty</li>";
+    } else {
+        document.getElementById('q8').innerHTML = "<li> Who's a grumpy bear </li>";
+    }
 }
 sleepings(3);
 
@@ -154,19 +154,35 @@ sleepings(3);
 var currentYear = 2016;
 
 document.getElementById('submitBtn2').addEventListener("click", function age(birthYear) {
-  var birthYear = document.getElementById('birthYear').value;
-  var age = currentYear - birthYear;
-  document.getElementById('q9').innerHTML = "<li> Your age is: " + age + "</li>";
+    var birthYear = document.getElementById('birthYear').value;
+    var age = currentYear - birthYear;
+    document.getElementById('q9').innerHTML = "<li> Your age is: " + age + "</li>";
 
 })
 
 
 
-
 // 10. Write a function that accepts the following array and separates the people into two teams. Display each team within the HTML page.
 //    No names next to each other in the array should be on the same team.
-teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
+var teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
+var teamOne = "";
+var teamTwo = "";
 
+
+function team(array) {
+    for (var i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            teamOne += array[i] + " , ";
+            document.getElementById('q10a').innerHTML = "<li>" + teamOne + "</li>";
+
+        } else {
+            teamTwo += array[i] + " , ";
+            document.getElementById('q10b').innerHTML = "<li>" + teamTwo + "</li>";
+        }
+
+    }
+}
+team(teammates);
 
 
 
