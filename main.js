@@ -282,12 +282,12 @@ var phoneNumbers2 = ["456799", "1234567898", "12345678911", "23456789101"];
 
 const phoneNumberCleanUp2 = phoneNumbers2 => {
     phoneNumbers2.forEach(phoneNumber2 => {
-      if (phoneNumber2.length === 10)
-        console.log('This is a good number:', phoneNumber2);
-      else if ((phoneNumber2.length === 11) && phoneNumber2.startsWith('1'))
-        console.log('This is a good number:', phoneNumber2.substring(1));
-      else
-        console.log('This is a bad number:', phoneNumber2);
+        if (phoneNumber2.length === 10)
+            console.log('This is a good number:', phoneNumber2);
+        else if ((phoneNumber2.length === 11) && phoneNumber2.startsWith('1'))
+            console.log('This is a good number:', phoneNumber2.substring(1));
+        else
+            console.log('This is a bad number:', phoneNumber2);
     });
 };
 phoneNumberCleanUp2(phoneNumbers2);
@@ -300,14 +300,14 @@ phoneNumberCleanUp2(phoneNumbers2);
 //     Iterate over the elements in the following array to determine if each is a number.
 //     HINT: You may need to use the isNaN method.
 
-var parameterNumbers = [8,4,"green", "yellow"];
+var parameterNumbers = [8, 4, "green", "yellow"];
 
 function parameterNum(array) {
     for (var i = 0; i < array.length; i++) {
-        if(isNaN(array[i])) {
-          console.log("Not a number: " + array[i]);
-        }else {
-          console.log("Is a number: " + array[i])
+        if (isNaN(array[i])) {
+            console.log("Not a number: " + array[i]);
+        } else {
+            console.log("Is a number: " + array[i])
         }
     }
 }
@@ -321,9 +321,9 @@ parameterNum(parameterNumbers);
 
 
 function dieRolling() {
-  var dieOne = Math.floor(Math.random() * 7);
-  var dieTwo = Math.floor(Math.random() * 7);
-  return dieOne + dieTwo;
+    var dieOne = Math.floor(Math.random() * 7);
+    var dieTwo = Math.floor(Math.random() * 7);
+    return dieOne + dieTwo;
 }
 dieRolling();
 console.log(dieRolling);
@@ -337,21 +337,20 @@ var totalRolls = 0;
 var counter = 0;
 
 function dieRolling() {
-  while(totalRolls < 40) {
-  var dieOne = Math.floor(Math.random() * 7);
-  var dieTwo = Math.floor(Math.random() * 7);
-  totalRolls += (dieOne + dieTwo);
-  counter++;
-  console.log(totalRolls)
-  document.getElementById('q19a').innerHTML += "<li> Each Roll: " + totalRolls + "</li>";
-  }
+    while (totalRolls < 40) {
+        var dieOne = Math.floor(Math.random() * 7);
+        var dieTwo = Math.floor(Math.random() * 7);
+        totalRolls += (dieOne + dieTwo);
+        counter++;
+        console.log(totalRolls)
+        document.getElementById('q19a').innerHTML += "<li> Each Roll: " + totalRolls + "</li>";
+    }
 }
 dieRolling();
 console.log(counter);
 
 
 document.getElementById('q19b').innerHTML = counter;
-
 
 
 
@@ -363,3 +362,15 @@ document.getElementById('q19b').innerHTML = counter;
 //        Except every year that is evenly divisible by 100
 //        Unless the year is also evenly divisible by 400
 //        For example, 1997 is not a leap year, but 1996 is. 1900 is not a leapyear, but 2000 is.
+
+
+
+
+document.getElementById('submitBtn4').addEventListener("click", function leapYear(year) {
+    var year = document.getElementById('year').value;
+    if (((year % 4 === 0) && (year % 100 !== 0)) || ((year % 100 === 0) && (year % 400 === 0))) {
+        document.getElementById('q20a').innerHTML = "<li> This is a Leap Year:  " + year + "</li>";
+    }else {
+      document.getElementById('q20b').innerHTML = "<li>This is not a Leap Year: " + year + "</li>";
+    }
+});
