@@ -265,9 +265,9 @@ function phoneNumberCleanUp(array) {
             console.log("This is a good number: " + array[i]);
 
         } else if ((array[i].length === 11) && (array[i].charAt(0) === "1")) {
-            console.log("This is a good number: " + (array[i].slice(array[i].length, -1)));
+            console.log("This is a good number: " + array[i].slice(array[i].length, -1));
 
-        } else if ((array[i].length === 11) && (array[i].charAt(0) !== 1)) {
+        } else if ((array[i].length === 11) && (array[i].charAt(0) !== "1")) {
             console.log("This is a bad number also: " + array[i]);
 
         } else {
@@ -278,7 +278,19 @@ function phoneNumberCleanUp(array) {
 phoneNumberCleanUp(phoneNumbers);
 
 
-console.log(phoneNumbers[2].length);
+var phoneNumbers2 = ["456799", "1234567898", "12345678911", "23456789101"];
+
+const phoneNumberCleanUp2 = phoneNumbers2 => {
+    phoneNumbers2.forEach(phoneNumber2 => {
+      if (phoneNumber2.length === 10)
+        console.log('This is a good number:', phoneNumber2);
+      else if ((phoneNumber2.length === 11) && phoneNumber2.startsWith('1'))
+        console.log('This is a good number:', phoneNumber2.substring(1));
+      else
+        console.log('This is a bad number:', phoneNumber2);
+    });
+};
+phoneNumberCleanUp2(phoneNumbers2);
 
 
 
@@ -307,6 +319,15 @@ parameterNum(parameterNumbers);
 //     Display the result in the HTML page.
 //     To get the random number rolled by each die, use Math.random and Math.floor.
 
+
+function dieRolling() {
+  var dieOne = Math.floor(Math.random() * 7);
+  var dieTwo = Math.floor(Math.random() * 7);
+  return dieOne + dieTwo;
+}
+dieRolling();
+console.log(dieRolling);
+document.getElementById('q18').innerHTML = dieRolling();
 
 
 // D. Using your die roll function above, figure out how many times it would take a user
