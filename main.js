@@ -191,6 +191,31 @@ team(teammates);
 //     Hint #1: You need to turn a string into an integer.
 //     Hint #2: Strings can be treated as arrays too.
 
+function add(a,b) {
+  return a + b;
+}
+
+document.getElementById('submitBtn3').addEventListener("click", function() {
+    var digits = document.getElementById('digits').value;
+    var digitsArray = digits.split('').map(function(i) {
+        return parseInt(i, 10)
+    }).reduce(add,0);
+
+    console.log(digitsArray);
+    document.getElementById('q11').innerHTML = digitsArray;
+})
+
+
+var arraydigistthree = [1,2,3];
+var sumArray = 0;
+
+function sumOfThree(array) {
+  for (var i = 0; i < array.length; i++) {
+    sumArray += array[i];
+  }
+  return sumArray;
+}
+sumOfThree(arraydigistthree);
 
 
 
