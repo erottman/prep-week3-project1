@@ -191,29 +191,29 @@ team(teammates);
 //     Hint #1: You need to turn a string into an integer.
 //     Hint #2: Strings can be treated as arrays too.
 
-function add(a,b) {
-  return a + b;
+function add(a, b) {
+    return a + b;
 }
 
 document.getElementById('submitBtn3').addEventListener("click", function() {
     var digits = document.getElementById('digits').value;
     var digitsArray = digits.split('').map(function(i) {
         return parseInt(i, 10)
-    }).reduce(add,0);
+    }).reduce(add, 0);
 
     console.log(digitsArray);
     document.getElementById('q11').innerHTML = digitsArray;
 })
 
 
-var arraydigistthree = [1,2,3];
+var arraydigistthree = [1, 2, 3];
 var sumArray = 0;
 
 function sumOfThree(array) {
-  for (var i = 0; i < array.length; i++) {
-    sumArray += array[i];
-  }
-  return sumArray;
+    for (var i = 0; i < array.length; i++) {
+        sumArray += array[i];
+    }
+    return sumArray;
 }
 sumOfThree(arraydigistthree);
 
@@ -228,7 +228,16 @@ sumOfThree(arraydigistthree);
 
 
 
+function piggyBank(quarters, dimes, nickels, pennies) {
 
+return ((quarters * 0.25) + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01));
+}
+
+var amount = piggyBank(2,4,6,8);
+console.log(piggyBank(2,4,6,8));
+var amountDollars = "$" + amount.toFixed(2);
+console.log(amountDollars);
+document.getElementById('q12').innerHTML = amountDollars;
 
 
 
