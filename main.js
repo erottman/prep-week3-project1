@@ -151,6 +151,14 @@ sleepings(3);
 
 // 9. Develop a function that determines a person's age by asking them for their birth year.
 
+var currentYear = 2016;
+
+document.getElementById('submitBtn2').addEventListener("click", function age(birthYear) {
+  var birthYear = document.getElementById('birthYear').value;
+  var age = currentYear - birthYear;
+  document.getElementById('q9').innerHTML = "<li> Your age is: " + age + "</li>";
+
+})
 
 
 
