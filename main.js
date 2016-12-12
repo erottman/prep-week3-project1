@@ -99,11 +99,26 @@ cashews(unitPriceEachMonth);
 
 
 
-// 6. Define functions called "area" and "perimeter". They should both accept two parameters and calculate the area and perimeter of a rectangle.
+// 6. Define functions called "area" and "perimeter". They should both accept two parameters and calculate the area
+// and perimeter of a rectangle.
 
 
 
+function areaRectangle(length, width) {
+  return length * width;
+}
+areaRectangle(4,2);
+console.log(areaRectangle(4,2));
+document.getElementById('q6a').innerHTML = "</li> The Area Rectangle:" + areaRectangle(4,2) + "</li>";
 
+
+
+function perimeterRectangle(length, width) {
+  return (length * 2) + (width * 2);
+}
+perimeterRectangle(4,2);
+console.log(perimeterRectangle(4,2));
+document.getElementById('q6b').innerHTML = "</li> The Perimeter Rectangle:" + perimeterRectangle(4,2) + "</li>";
 
 // 7. Define a function called "quarter". It accepts one parameter called "number".
 //    The function will return a value which is one quarter of the number provided.
