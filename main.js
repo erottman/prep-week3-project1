@@ -333,6 +333,26 @@ document.getElementById('q18').innerHTML = dieRolling();
 // D. Using your die roll function above, figure out how many times it would take a user
 //     to get around a Monopoly board once. A monopoly board has 40 spaces total.
 
+var totalRolls = 0;
+var counter = 0;
+
+function dieRolling() {
+  while(totalRolls < 40) {
+  var dieOne = Math.floor(Math.random() * 7);
+  var dieTwo = Math.floor(Math.random() * 7);
+  totalRolls += (dieOne + dieTwo);
+  counter++;
+  console.log(totalRolls)
+  document.getElementById('q19a').innerHTML += "<li> Each Roll: " + totalRolls + "</li>";
+  }
+}
+dieRolling();
+console.log(counter);
+
+
+document.getElementById('q19b').innerHTML = counter;
+
+
 
 
 // E. Write a function that takes a year from a user
